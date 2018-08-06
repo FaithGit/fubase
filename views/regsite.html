@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> 请按要求填写信息</h3>
+                </div>
+                <div class="panel-body">
+                    <form action="/registe-add" method="post">
+                        <div class="form-group">
+                            <label>你的账号</label>
+                            <input type="text" name="username" class="form-control" placeholder="你的用户名">
+                            <p class="help-block">现在还没有任何要求</p>
+                        </div>
+                        <div class="form-group">
+                            <label>密码</label>
+                            <input type="password" name="password" class="form-control" placeholder="你的密码">
+                            <p class="help-block">现在还没有任何要求</p>
+                        </div>
+                        <button type="submit" class="btn btn-primary">注册</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-hd-video"></span> Video training</h3>
+                </div>
+                <div class="panel-body">
+                    <video width="100%" controls="controls">
+                        <source src="">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+{% endblock %}
