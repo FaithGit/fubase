@@ -26,7 +26,7 @@ module.exports = {
     'GET /jian':async(ctx,next)=>{
 
         var {jian}=require("../mysqlapp");
-        jian('asd');
+        jian('123');
         ctx.body="jian over"
                
     },
