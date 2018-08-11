@@ -11,7 +11,7 @@
                     <form action="/registe-add" method="post">
                         <div class="form-group">
                             <label>你的账号</label>
-                            <input type="text" id="username" name="username" class="form-control" placeholder="你的用户名">
+                            <input type="text"  name="username" class="form-control" placeholder="你的用户名">
                             <p class="help-block">现在还没有任何要求</p>
                         </div>
                         <div class="form-group">
@@ -39,10 +39,4 @@
     </div>
    
 </div>
-<!-- 前端页面简略检测xss攻击 定死数字字母开头， -->
-<script>$("#username").change(function(){
-   var changeVal=$("#username").val();
-   
-
-})</script>;
 {% endblock %}

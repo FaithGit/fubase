@@ -18,9 +18,19 @@ module.exports = {
         var
             username = ctx.request.body.username || '',
             password = ctx.request.body.password || '';
-        var {addregiste}=require("../mysqlapp");
-        addregiste(username,password);
-        ctx.body="good jobs"
+        var {cha,addregiste}=require("../mysqlapp");
+        //  查询是否有重复的用户名
+        var xx= await cha(`${username}`);
+        if(JSON.stringify(xx)==="[]"){
+            addregiste(username,password);
+            ctx.body="good jobs"
+        }
+        else{
+            ctx.render("signin-failed.html",{
+                title:"faild"
+            })
+        }
+     
                
     },
     'GET /jian':async(ctx,next)=>{
