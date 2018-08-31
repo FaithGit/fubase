@@ -40,11 +40,12 @@ async function jian(username) {
 async function cha(username) {
     var dog=await Pet.findAll({where:{username}})
     console.log(`find ${dog.length} dogs:`);
-    for (let p of dog) {
-        console.log(JSON.stringify(p));
-    }
+    return dog;
+}
+async function login(username,password) {
+    var dog=await Pet.findAll({where:{username,password}})
     return dog;
 }
     
 
-module.exports={addregiste,jian,cha};
+module.exports={addregiste,jian,cha,login};

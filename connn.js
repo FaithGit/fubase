@@ -5,24 +5,24 @@ function addrouter(router,requireJs){
         if(url.startsWith('GET ')){
             var path=url.substring(4)
             router.get(path,requireJs[url])
-            console.log(`found url Get${path}`)
+            console.log(`[GET]注入路由${path}`)
         }
         else if(url.startsWith("POST ")){
             var path=url.substring(5)
             router.post(path,requireJs[url])
-            console.log(`found url POST${path}`)
+            console.log(`[POST]注入路由${path}`)
         }
         else if(url.startsWith("put ")){
             var path=url.substring(4)
             router.put(path,requireJs[url])
-            console.log(`found url put${path}`)
+            console.log(`[PUT]注入路由${path}`)
         }
         else if(url.startsWith("del ")){
             var path=url.substring(4)
             router.del(path,requireJs[url])
-            console.log(`found url del${path}`)
+            console.log(`[DEL]注入路由${path}`)
         }else{
-            console.log(`invalid url+${url}`)
+            console.log(`未添加相应路由方式\n${url}注入失败`)
         }
     }
 }
