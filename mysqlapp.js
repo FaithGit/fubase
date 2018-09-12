@@ -20,6 +20,7 @@ var Pet = sequelize.define('user', {
     },
     username: Sequelize.STRING(45),
     password: Sequelize.STRING(45),
+    lv:Sequelize.INTEGER(11),
 
 }, {
         timestamps: false
@@ -27,11 +28,12 @@ var Pet = sequelize.define('user', {
 
 
 
-async function addregiste(username,password) {
-    var dog=await Pet.create({username, password});
+async function addregiste(username,password,lv) {
+    var dog=await Pet.create({username, password,lv});
     console.log('created: ' + JSON.stringify(dog));
     
 }
+
 async function jian(username) {
     var dog=await Pet.destroy({where:{username}})
     console.log('destroy: ' + JSON.stringify(dog));

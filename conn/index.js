@@ -34,12 +34,15 @@ module.exports = {
         var
             username = ctx.request.body.username || '',
             password = ctx.request.body.password || '';
+            lv = ctx.request.body.lv || 1;
         var {cha,addregiste}=require("../mysqlapp");
         //  查询是否有重复的用户名
         var cha_username= await cha(`${username}`);
         //如果是空对象 就添加到mysql
         if(JSON.stringify(cha_username)==="[]"){
-            addregiste(username,password);
+
+
+            addregiste(username,password,lv);
             ctx.body="good jobs"
         }
         else{
