@@ -15,3 +15,7 @@ $("input[name='username']").change(function(){
      alert("只允许数字加英文的组合");
     }
  })
+
+$("#xiala_username").mouseover(function(){
+
+})

@@ -44,6 +44,7 @@ async function cha(username) {
     console.log(`find ${dog.length} dogs:`);
     return dog;
 }
+// 用户登录
 async function login(username,password) {
     var dog=await Pet.findAll({where:{username,password}})
     return dog;

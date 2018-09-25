@@ -8,6 +8,10 @@ module.exports = {
             // 查询用户名和密码
             var result= await login(username,password);
             result=JSON.stringify(result);
+            result=JSON.parse(result);
+            
+            console.log(result[0].lv);
+
             if(result==='[]'){
                 // 没有的话返回一个什么页面
                 ctx.render("signin-failed.html",{
@@ -17,6 +21,7 @@ module.exports = {
             else{
                 // 有的话返回一个cookie
                 ctx.session.user = username;
+                // ctx.session.lv = username;
                 console.log(`恭喜${ctx.session.user}登录`)
                 ctx.redirect('/');
             }
